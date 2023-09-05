@@ -1,0 +1,9 @@
+#!/bin/bash
+IFS=':' read -ra DIR <<< "$PATH"
+count=0
+for dir in "${DIR[@]}"; do
+    if [[ -d $dir ]]; then
+        ((count++))
+    fi
+done
+echo $count
